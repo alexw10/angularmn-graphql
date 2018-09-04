@@ -1,30 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { graphqlExpress, ApolloServer } from 'apollo-server-express';
-import { gql } from 'apollo-server-express';
+import TYPEDEFS from './schema.js';
 import axios from 'axios';
 
-const TYPEDEFS = gql`
-  type Query {
-    test_query: Test
-  }
-  type Test {
-    test_field_1: String
-    test_field_2: Int
-    test_field_3: Boolean
-  }
-`;
-
-const RESOLVERS = {
-  Query: {
-    test_query: (parent, args) => {
-      return axios
-        .get(`www.apiurl.com/people`)
-        .then(response => response.data)
-        .catch(error => console.log(error));
-    }
-  }
-};
+const RESOLVERS = {};
 
 const SERVER = new ApolloServer({
   typeDefs: TYPEDEFS,
