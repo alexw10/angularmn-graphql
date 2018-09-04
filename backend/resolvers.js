@@ -152,4 +152,15 @@ fragment heroFields on Hero {
   name
   voteCount
 }
+
+Setting up MongoDB and mongoose
+Start with command mongod
+MongoDB management tool Robo 3T (free and lightweight mongodb management tool)
+https://robomongo.org/
+
+npm install mongoose
+npm install cors
+
+npm run server 
+show that mongodb connection has been established successfully
 */
