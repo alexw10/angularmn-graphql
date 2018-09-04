@@ -23,7 +23,6 @@ const app = express();
 app.use(cors());
 
 mongoose.connect('mongodb://localhost/graphqlserver');
-
 const connection = mongoose.connection;
 
 connection.once('open', () => {
