@@ -25,7 +25,7 @@ const RESOLVERS = {
       return heroModel.findOne({ id: id });
     }
   },
-  Mutuation: {
+  Mutation: {
     upvote: (root, { id }) => {
       const hero = courseData.filter(hero => {
         return hero.id === id;
