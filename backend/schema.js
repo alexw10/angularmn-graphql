@@ -2,18 +2,18 @@ import { gql } from 'apollo-server-express';
 
 const TYPEDEFS = gql`
   type Hero {
-    id: String
+    id: Int
     name: String
     voteCount: Int
   }
   type Query {
     allHeroes(searchTerm: String): [Hero]
-    hero(id: String!): Hero
+    hero(id: Int!): Hero
   }
   type Mutation {
     addHero(name: String!): Hero
-    upvote(id: String!): Hero
-    downvote(id: String!): Hero
+    upvote(id: Int!): Hero
+    downvote(id: Int!): Hero
   }
 `;
 
