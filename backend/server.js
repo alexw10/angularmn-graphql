@@ -2,9 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { graphqlExpress, ApolloServer } from 'apollo-server-express';
 import TYPEDEFS from './schema.js';
+import RESOLVERS from './resolvers.js';
 import axios from 'axios';
-
-const RESOLVERS = {};
 
 const SERVER = new ApolloServer({
   typeDefs: TYPEDEFS,
